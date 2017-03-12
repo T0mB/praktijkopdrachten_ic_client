@@ -98,7 +98,7 @@
 						list = new ArrayList<String>();
 						list.add(s2);
 						saveZpList(list);
-						check = "list created";
+						check = "input deleted";
 					} else {
 						FileInputStream fis = new FileInputStream(file);
 						ObjectInputStream ois = new ObjectInputStream(fis);
@@ -150,7 +150,7 @@
 						list = new ArrayList<String>();
 						list.add(s2);
 						saveZpList(list);
-						check = "list created";
+						check = "list updated";
 					} else {
 						FileInputStream fis = new FileInputStream(file);
 						ObjectInputStream ois = new ObjectInputStream(fis);
