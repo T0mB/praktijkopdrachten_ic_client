@@ -59,7 +59,7 @@
 					}
 					
 					ois.close();
-					check = "list already exists";
+					check = "list already exists and value is added";
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -75,7 +75,7 @@
 				throws java.rmi.RemoteException {
 			String check = null;
 			DataInputStream input;
-			List<String> list = null;
+			List<String> list = new ArrayList<String>();
 			String s = serienummer + "-" + postcode;
 			try {
 				input = new DataInputStream(new FileInputStream("Zonnepanelen.dat"));
@@ -104,7 +104,7 @@
 						ObjectInputStream ois = new ObjectInputStream(fis);
 						list = (List<String>) ois.readObject();
 						ois.close();
-						check = "list already exists";
+						check = "input deleted";
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -124,7 +124,7 @@
 				java.lang.String postcode) throws java.rmi.RemoteException {
 			String check = null;
 			DataInputStream input;
-			List<String> list = null;
+			List<String> list = new ArrayList<String>();
 			String s = serienummer + "-" + postcode;
 			
 			try {
@@ -156,7 +156,7 @@
 						ObjectInputStream ois = new ObjectInputStream(fis);
 						list = (List<String>) ois.readObject();
 						ois.close();
-						check = "list already exists";
+						check = "list updated";
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
